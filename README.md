@@ -10,5 +10,8 @@ pip install -r requirements.txt
 ```
 
 # Usage
-```python get_meraki.py
+```
+export API_URL=<MERAKI_API_URL>
+EXPORT MERAKI_X_AUTH_TOKEN=<MERAKI_X_AUTH_TOKEN>
+python get_meraki.py
 ```
