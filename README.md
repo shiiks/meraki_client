@@ -15,3 +15,6 @@ export API_URL=<MERAKI_API_URL>
 EXPORT MERAKI_X_AUTH_TOKEN=<MERAKI_X_AUTH_TOKEN>
 python get_meraki.py
 ```
+
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/Shikhar447/meraki_client)
+[![Run in Cisco Cloud IDE](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-runable-icon.svg)](https://developer.cisco.com/devenv/?id=devenv-vscode-base&GITHUB_SOURCE_REPO=https://github.com/Shikhar447/meraki_client)
