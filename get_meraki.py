@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
-"""Author: Shikhar Saran Srivastava Purpose: This script uses Meraki API to fetch list of organisations, networks and
-devices, it leverages Cisco DevNet sandboxes. """
+"""Author: Shikhar Saran Srivastava 
+Purpose: This script uses Meraki API to fetch list of organisations, networks and
+devices, it leverages Cisco DevNet sandboxes. 
+"""
 
 import requests
 import logging
@@ -74,12 +76,15 @@ class Meraki:
                     networks = self.http_get_requests(f"{self.api_url}/organizations/{organisation_id}/networks",
                                                       self.headers)
                     for network in networks:
-                        network_id = network['id']
-                        logging.info(f"Network IDs found in {organisation_id} are: {network_id}")
-                        devices = self.http_get_requests(
-                            f"{self.api_url}/organizations/{organisation_id}/networks/{network_id}/devices",
-                            self.headers)
-                        logging.info(f"Device found in {organisation_id} and Network ID {network_id} are: {devices}")
+                        if 'id' in network:
+                            network_id = network['id']
+                            logging.info(f"Network IDs found in {organisation_id} are: {network_id}")
+                            devices = self.http_get_requests(
+                                f"{self.api_url}/organizations/{organisation_id}/networks/{network_id}/devices",
+                                self.headers)
+                            logging.info(f"Device found in {organisation_id} and Network ID {network_id} are: {devices}")
+                        else:
+                            continue
         except Exception as exception:
             logging.info(f"Error: {exception}")
         return devices
